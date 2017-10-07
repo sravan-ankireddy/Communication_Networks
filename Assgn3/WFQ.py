@@ -130,7 +130,7 @@ sum_q_count = 0;
 for i in range(num_q):
 	sum_q_count = sum_q_count + count_q[i]; #total remaining packets  
 
-temp_t1 = t[ num_q + 1];
+temp_t1 = t[ num_p - 1];
 t_old = temp_t1;
 
 end = 0;
@@ -190,14 +190,14 @@ TT = [];
 QQ = [];
 
 ct = t[0];
-ctq = q[0];
+
 
 rem = [0] * num_p;
 
 for j in range(num_p):
 	for i in range(num_p):
 		if ( t[ID[i] - 1] <= ct and rem[ID[i] - 1] == 0):
-			ct = ct + float(l2[QID[i] - 1]) / Cap;
+			ct = ct + float(l2[ID[i] - 1]) / Cap;
 			rem[ID[i] - 1] = 1; 
 			TT.append(ct);
 			QQ.append(ID[i])
